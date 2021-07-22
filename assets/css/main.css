@@ -43,6 +43,10 @@ body {
 	list-style: none;
 } */
 
+ol, ul {
+	text-align: left;
+}
+
 blockquote, q {
 	/* quotes: none; */
 	text-align: left;
