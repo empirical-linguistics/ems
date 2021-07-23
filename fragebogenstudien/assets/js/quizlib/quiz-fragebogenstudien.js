@@ -53,7 +53,7 @@ function handleAnswers(quiz, question, no, correct) {
 window.onload = function() {
     quiz = new Quiz('quiz', [
         'b',
-        'c',
+        ['b', 'c'],
         'b',
         'a',
         'c'
