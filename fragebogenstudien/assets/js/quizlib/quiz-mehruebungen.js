@@ -52,7 +52,7 @@ function handleAnswers(quiz, question, no, correct) {
 
 window.onload = function() {
     quiz = new Quiz('quiz', [
-        ['a','b','c','d','e'],
-        'b'
+        ['a','c','d'],
+        'a'
     ]);
 };

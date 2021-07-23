@@ -1,7 +1,9 @@
-// quiz variable
+/**
+* Try this example at https://alpsquid.github.io/quizlib
+*/
+
 var quiz;
 
-// showResults function
 function showResults() {
     // Check answers and continue if all questions have been answered
     if (quiz.checkAnswers()) {
@@ -22,29 +24,6 @@ function showResults() {
         quiz.highlightResults(handleAnswers);
     }
 }
-
-// binary ShowResults function
-function showResultsBinary() {
-    // Check answers and continue if all questions have been answered
-    if (quiz.checkAnswers()) {
-        var quizScorePercent = quiz.result.scorePercentFormatted; // The unformatted percentage is a decimal in range 0 - 1
-        var quizResultElement = document.getElementById('quiz-result');
-        quizResultElement.style.display = 'block';
-        document.getElementById('quiz-score').innerHTML = quiz.result.score.toString();
-        document.getElementById('quiz-max-score').innerHTML = quiz.result.totalQuestions.toString();
-        document.getElementById('quiz-percent').innerHTML = quizScorePercent.toString();
-
-        // Change background colour of results div according to score percent
-        if (quizScorePercent >= 75) quizResultElement.style.backgroundColor = '#4caf50';
-        else if (quizScorePercent >= 50) quizResultElement.style.backgroundColor = '#ffc107';
-        else if (quizScorePercent >= 25) quizResultElement.style.backgroundColor = '#ff9800';
-        else if (quizScorePercent >= 0) quizResultElement.style.backgroundColor = '#f44336';
-        
-        // Highlight questions according to whether they were correctly answered. The callback allows us to highlight/show the correct answer
-        quiz.highlightResults(handleAnswers);
-    }
-}
-
 
 /** Callback for Quiz.highlightResults. Highlights the correct answers of incorrectly answered questions 
  * Parameters are: the quiz object, the question element, question number, correctly answered flag
@@ -73,6 +52,10 @@ function handleAnswers(quiz, question, no, correct) {
 
 window.onload = function() {
     quiz = new Quiz('quiz', [
-        ['a','d']
+        'b',
+        'c',
+        'b',
+        'a',
+        'c'
     ]);
 };
