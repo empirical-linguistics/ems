@@ -31,7 +31,8 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="#wozu" id="top-link"><span class="icon solid fa-coffee">Tutorial</span></a></li>
+								<li><a href="#wozu" id="top-link"><span class="icon solid fa-coffee">Tutorials</span></a></li>
+								<li><a href="#cheat" id="top-link"><span class="icon solid fa-file-code">HTML Cheat Sheet</span></a></li>
 							</ul>
 						</nav>
 
@@ -73,6 +74,10 @@
 
 							<p>Diese Tutorials sind v.a. zur projektinternen Verwendung gedacht, aber auch für alle, die aufbauend auf unserem Tutorial eigene Tutorials erstellen oder unsere Tutorials erweitern wollen. In wenigen Schritten wird hier gezeigt, wie man Text, Bilder und Videos in die Templates einfügt.</p>
 
+
+
+
+
 							<h3 style="margin-bottom: 20px;">Video-Tutorial: Text in HTML-Template einfügen</h3>
 
 							<iframe width='570' height='321' style='width: 570px; height: 321px; border: 1px solid #ccc;' src='https://mediathek.hhu.de/embed/2126c73a-a201-4f40-899c-bb16fd8fbea7' frameborder='0' allowfullscreen></iframe>
@@ -102,7 +107,63 @@
 							<p><a href="https://www.w3schools.com/">W3 Schools</a></p>
 							<p><a href="https://pad.hhu.de/TuNR7Ac3QbWR9_gMtueA4Q?edit">Padlet mit den Bilddateien mit Alternativtexten</a></p>
 
+
+							
+
 						</div>
+					</section>
+
+					<!-- HTML Cheat Sheet -->
+
+					<section id="cheat" class="three">
+
+						<div class="container">
+
+							<h2 id="html-cheat-sheet">HTML cheat sheet</h2>
+							<h2 id="text">Text</h2>
+							<ul>
+							<li><code>&lt;p&gt;</code>...<code>&lt;/p&gt;</code>: Normaler Text (&quot;paragraph&quot;)</li>
+							<li>Listen:<ul>
+							<li><code>&lt;ul&gt;</code> unordered list: Bulletpoints</li>
+							<li><code>&lt;ol&gt;</code> ordered list: defaultmäßig mit Nummerierung; lässt sich mit Type-Argument zu a,b,c ändern: <code>&lt;ol type=&quot;a&quot;&gt;</code></li>
+							</ul>
+							</li>
+							</ul>
+							<h2 id="grafiken">Grafiken</h2>
+							<ul>
+							<li>Grundmuster: <code>&lt;img src=&quot;path/to/source&quot; style=&quot;...&quot;&gt;</code></li>
+							<li>Im <code>style</code>-Element können wir das Erscheinungsbild genauer festlegen, und zwar mit Hilfe von CSS-Code:<ul>
+							<li><code>width, height</code>: Breite und Höhe entweder in Pixel oder in % (der Bildschirmfläche). Um das Design responsiv zu halten, d.h. dynamisch an unterschiedliche Bildschirmgrößen anpassbar, empfiehlt es sich, mit relativen Werten (also %) zu arbeiten, wo immer möglich.</li>
+							<li><code>float</code>: Positionierung, entweder <code>left</code> (links vom Text), <code>right</code> oder <code>center</code>.</li>
+							<li><code>alt</code>: Alternativtext (falls Bild nicht geladen werden kann und für Screenreader; bitte immer hinzufügen)</li>
+							</ul>
+							</li>
+							</ul>
+							<p>Das Einfügen eines Bilds sähe dann z.B. so aus:</p>
+							<p> <code>&lt;img src=&quot;smiley.gif&quot; alt=&quot;Smiley face&quot; style=&quot;float:left;width:30%;&quot;&gt;</code></p>
+							<h2 id="videos">Videos</h2>
+							<p>Videos können sehr einfach eingebunden werden, indem man die Embed-Links der jeweiligen Mediathek (HHU Mediathek oder Youtube) copy&amp;pastet.</p>
+							<h2 id="ausklappbare-passagen">Ausklappbare Passagen</h2>
+							<p>An einigen Stellen in den Tutorials gibt es vertiefende Passagen, die defaultmäßig &quot;eingeklappt&quot; (<em>collapsed</em>) sein sollen. Das geht recht einfach mit einem sog. Akkordeon:</p>
+
+							<pre><code class="lang-{html}">
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"accordion"</span>&gt;</span>Mehr dazu<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+							
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel"</span>&gt;</span>
+							
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Text Text Text<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+							
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+							</code></pre>
+							<p>Mehr dazu findet sich z.B. bei <a href="https://www.w3schools.com/howto/howto_js_accordion.asp">W3 Schools</a>.</p>
+							
+							
+							
+
+
+						</div>
+
+
 					</section>
 
 
