@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="de">
+	<head>
+		<title>Visualisierung mit Excel</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/quizlib.min.css" />
+		<link rel="stylesheet" href="../../assets/css/quizlib_stylesheet.css" />
+		<link rel="icon" href="../../images/empiricalmethods-logo-favicon.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><a href="../../index.html"><img src="../../images/empiricalmethods-logo-small.png" alt="" /></a></span>
+							<h1 id="title"><a href="../../index.html">Empirische Methoden</a></h1>
+							<p style="text-align:right;"><a href="../../index.html">für die Sprachwissenschaft</a></p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#balken" id="top-link"><span class="icon solid fa-coffee">Einfache Balkendiagramme</span></a></li>
+								<li><a href="#linien" id="top-link"><span class="icon solid fa-coffee">Liniendiagramme</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="https://github.com/empirical-linguistics/" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:hartmast@hhu.de" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Was sind Fragebögen?</h2>
+								
+							</header>
+
+						</div>
+					</section>
+
+				<!-- Allgemeines -->
+					<section id="balken" class="two">
+						<div class="container">
+
+							<h2>Einfache Balkendiagramme</h2>
+
+							<p>Für unser erstes Beispiel nutzen wir die Daten zur Konkurrenz von <i>programmiert</i> und <i>vorprogrammiert</i> aus dem <a href="https://www.dwds.de/">DWDS-Kernkorpus des 20. Jahrhunderts</a> (siehe Tutorial zur Korpuslinguistik). Es handelt sich um einen kleinen Datensatz mit Belegen für <i>programmiert</i> und <i>vorprogrammiert</i>, die daraufhin annotiert wurden, a) ob das Partizip attributiv oder prädikativ gebraucht wird (<i>der programmierte Computer</i> vs. <i>der Computer ist programmiert</i>), b) ob es sich auf das Objekt des Programmiervorgangs bezieht (<i>die Maschine wird programmiert</i>) oder auf das Resultat des Programmiervorgangs (<i>die Maschine ist programmiert</i>) und c) ob <i>programmieren</i> im wörtlichen Sinn gebraucht wird (<i>die Maschine ist programmiert</i>) oder im übertragenen, metaphorischen Sinn (<i>der Skandal ist programmiert</i>). Die Daten können Sie hier als Excel-Tabelle herunterladen.</p>
+
+							<p>Ideal für die Auswertung und Visualisierung solcher Daten in Excel ist die PivotChart-Funktion. Manches an dieser Funktion ist zunächst ein wenig gewöhnungsbedürftig, aber nach kurzer Eingewöhnungszeit ist sie doch halbwegs logisch und intuitiv. Mit dieser Funktion kann man sogenannte Pivot-Tabellen erstellen und direkt visualisieren. Mit Pivot-Tabellen sind Tabellen gemeint, die es erlauben, Daten aus einer bestehenden Tabelle, die als Dreh- und Angelpunkt (pivot) dient, zusammenzufassen, ohne dafür die ursprüngliche Tabelle zu verändern. Das nutzt man, um Daten zu aggregieren: Angenommen, wir haben eine Ergebnistabelle einer Umfrage, in der jede Teilnehmerin oder jeder Teilnehmer aus zwei Gruppen (Gruppe 1 und Gruppe 2) eine Frage mit Ja oder Nein beantworten musste. Nach dem Tidy-Data-Prinzip erscheinen die Ergebnisse jedes Teilnehmenden in der Tabelle in einer eigenen Zeile (links):</p>
+
+=== pivottable.png ===
+<p>Eine Pivot-Tabelle fasst nun diese Einzeldaten zusammen (aggregiert sie), indem sie uns beispielsweise anzeigt, wie viele Personen in der jeweiligen Gruppe mit “Ja” oder “Nein” geantwortet haben (rechts).</p>
+
+<p>Nun wollen wir uns unserem konkreten Beispiel zuwenden, dem (vor)programmiert-Datensatz. Stellen Sie zunächst sicher, dass eine Zelle innerhalb der Tabelle angewählt ist (z.B. die Zelle ganz oben links). Jetzt klicken wir im Reiter “Einfügen” auf “PivotChart”. Nun öffnet sich ein Fenster, in dem wir gefragt werden, welche Zellen Teil der PivotTable werden sollen (hier sollte Excel bereits automatisch erkannt haben, dass wir die ganze Tabelle einbeziehen wollen, sodass wir nichts mehr ändern müssen) und ob die Tabelle auf dem aktuellen oder einem neuen Arbeitsblatt erstellt werden soll – es empfiehlt sich, sie auf einem neuen Arbeitsblatt zu erstellen, was auch die Default-Option ist. Also können wir einfach OK klicken. Der folgende Screencast zeigt noch einmal die einzelnen Schritte.</p>
+
+== Screencast hier ==
+
+<p>
+	Nun öffnet sich ein neues Arbeitsblatt (mit den Reitern unten können Sie zwischen den Arbeitsblättern navigieren und ihnen ggf. auch aussagekräftigere Namen geben). Wir sehen ein dreigeteiltes Fenster. Im Arbeitsblatt selbst finden wir ein etwas kryptisch aussehendes, noch weitgehend leeres Feld mit einer Beschriftung wie “PivotTable1” o.ä. Das ist quasi der Platzhalter für die noch zu erstellende Tabelle. Rechts sehen wir oben eine Aufstellung der Namen der Tabellenspalten, unten sehen wir ein wiederum viergeteiltes Fenster. In die vier Felder in diesem Fenster können wir nun ausgewählte Spaltennamen aus dem Fenster oben rechts ziehen. Probieren Sie doch einmal, die Spalte “Hit” in das Feld “Zeilen” zu ziehen. Jetzt sehen Sie in der Pivot-Tabelle die beiden Zeilen “programmiert” und “vorprogrammiert”. Höchstwahrscheinlich ist “Hit” auch automatisch im Fenster “Werte” unten rechts aufgetaucht. Deshalb wird Ihnen in der Pivot-Tabelle auch die Häufigkeit der beiden Varianten angezeigt.
+	Die Logik ist also ganz einfach: Was im Feld “Spalten” steht, taucht in den Spalten der Tabelle auf, was im Feld “Zeilen” steht, taucht in den Zeilen auf, und was im Feld “Werte” steht, das wird ausgezählt (bzw. bei numerischen Werten aufsummiert; hier muss man ggf. aufpassen, dass die richtige Operation gewählt ist. Durch Klick auf das kleine Info-Symbol in den Feldern kann man das bei Bedarf anpassen). Mit Hilfe des Felds “Filter” kann man die Daten bei Bedarf filtern.
+</p>
+<p>
+	In unserem Beispiel wollen wir genau das tun: Wir wollen ja nur die prädikativ gebrauchten Instanzen von (vor)programmiert berücksichtigen. Leeren wir die beiden Felder zunächst wieder, indem wir “Hit” aus dem jeweiligen Feld in das Fenster rechts oben ziehen.
+	Dann ziehen wir die Spalte “prädikativ” in das Feld “Filter”. Jetzt können wir im Fenster links die nicht-prädikativen Daten herausfiltern.
+</p>
+<p>Nun wollen wir eine tabellarische Übersicht über die Lesarten und die Referenz (Objekt vs. Resultat) getrennt nach den beiden Varianten “programmiert” und “vorprogrammiert” bekommen. Führen wir uns noch einmal vor Augen, was die dafür relevanten Tabellenspalten sind:</p>
+<p>Die Spalte “Lesart” enthält die Lesarten.</p>
+<p>Die Spalte “Referenz” enthält die Information darüber, ob der jeweilige Beleg auf das Objekt des Programmiervorgangs oder dessen Resultat referiert.</p>
+<p>Die Spalte “Hit” enthält die Variante des Treffers.</p>
+<p>Zur Auswertung müssen wir die drei Spalten nun sinnvoll auf die “Zeilen”- und “Spalten”-Felder verteilen und zudem angeben, was ausgezählt werden soll. Hier gibt es mehrere Möglichkeiten; eine davon ist die folgende: In den Spalten werden die Daten nach Variante (“Hit”) ausgewertet, in den Zeilen zum einen nach Lesart, zum anderen nach Referenz. Ausgezählt wird die Spalte “Lesart” – genauso gut könnten wir aber auch die Spalte “Referenz” auszählen, die Ergebnisse wären die gleichen, da ja beide Variablen in der Tabelle berücksichtigt sind.</p>
+<p>Schon auf den ersten Blick sehen wir eine ungleiche Verteilung der Daten auf die beiden Varianten: vorprogrammiert wird in unseren Daten ausschließlich in metaphorischen Kontexten und ausschließlich für Resultate gebraucht. Bei programmiert ist der Gebrauch vielfältiger, wenngleich auch hier eine Präferenz für eben diese Merkmalskombination (metaphorischer Kontext/Resultat) deutlich wird.</p>
+<p>Quasi als Sahnehäubchen können wir diese Verteilung auch visualisieren, beispielsweise mit einem Balkendiagramm. Das geht, indem wir die relevanten Zellen in der PivotTable markieren (also alles, was nicht die Gesamtsumme anzeigt) und dann in “Einfügen” eine passende Visualisierungsoption auswählen.</p>
+<p>Welche Daten auf der x- und auf der y-Achse dargestellt und welche innerhalb der Balken farblich kodiert werden, hängt davon ab, welche Daten in der Pivot-Tabelle in den Zeilen und in den Spalten stehen. Gegebenenfalls kann man hier noch ein paar Änderungen vornehmen, um die Darstellung sinnvoller zu gestalten. So entsteht ein Diagramm, bei dem die Variante (programmiert vs. vorprogrammiert) farblich kodiert wird. Das ist nicht unbedingt sinnvoll, weil wir ja wissen wollen, wie sich die Verteilung der unterschiedlichen Lesarten zwischen den beiden Varianten unterscheidet. Man kann die visuelle Darstellung auch in dem “Pivot Chart Fields”-Feld ändern, das sich bei der Erstellung des Balkendiagramms geöffnet haben dürfte.</p>
+<p>Und noch etwas Feinjustierung: Damit die Grafik nicht so asymmetrisch aussieht, werden (im ersten Schritt) zunächst die Feldeinstellungen so verändert, dass auch Felder mit Null-Werten angezeigt werden. Anschließend wird ein Balkendiagramm ausgewählt, das den prozentualen Anteil der jeweiligen Variante darstellt. Durch Rechtsklick auf die Balken kann man außerdem noch “Data Labels” hinzufügen, d.h. die absoluten Werte in den Balken darstellen lassen. Das ist empfehlenswert, weil so die Leserin oder der Leser schnell einen Eindruck gewinnen kann, wie groß die Datenbasis ist, auf der die Darstellung basiert – denn es macht ja schon einen gewichtigen Unterschied, ob eine Verteilung wie, sagen wir 10% : 90% auf zehn, auf hundert oder auf tausend Datenpunkten basiert! Die “Data Labels” kann man hinzufügen durch Rechtsklick auf die Balken und Klick auf den Punkt “Show data labels”.</p>
+
+
+							<p>Was aber ist überhaupt ein wissenschaftlicher Fragebogen? Porst (1996: 738) definiert ihn als</p>
+
+							
+							<p><blockquote>eine mehr oder weniger standardisierte Zusammenstellung von Fragen, welche Personen zur Beantwortung vorgelegt werden mit dem Ziel, deren Antworten zur Überprüfung der den Fragen zugrunde liegenden theoretischen Konzepte und Zusammenhänge zu verwenden.</blockquote></p>							
+
+							<p>Auf mehrere Aspekte dieser Definition lohnt es sich näher einzugehen. Um eine Fragebogenstudie durchzuführen, benötigen wir zunächst einmal eine <strong>Fragestellung</strong> und auch eine dazugehörige <strong>Hypothese</strong>. Ein Fragebogen soll dann dabei helfen, eine Antwort auf die zuvor formulierte Fragestellung zu finden und die Hypothese zu überprüfen. </p>
+
+							<p><img class="left" alt="Tafelbild eines Strichmännchens, dass eine Treppe hochklettert" style="margin-right:15px;float:left;width: 250px;" src="../images/Fragebogenstudien/board-3695073_1920.jpg" />Damit ist auch schon die in der Definition als formulierte “Überprüfung der [...] theoretischen Konzepte und Zusammenhänge” angesprochen. Die Beantwortung einer Fragestellung und die Überprüfung einer Hypothese können letztlich dazu führen, eine linguistische <strong>Theorie</strong> (in Teilen) zu untermauern oder zu widerlegen.</p>
+
+							<p>So viel zu den theoretischen Grundlagen. Was aber muss man sich nun genau unter einer “mehr oder weniger standardisierte[n] Zusammenstellung von Fragen” vorstellen?</p>
+
+							<img class="left" alt="Süß guckender Schäferhundwelpe" style="margin-right:15px" src="../images/Fragebogenstudien/dex-ezekiel-fg8tdcxrkrA-unsplash.jpg" width="450"/><br><br>
+
+<span style="font-size:25px;float:center;"><a href="../../index.html" class="button scrolly">Hauptseite</a></span>
+<span style="font-size:25px;float:right;"><a href="02_qualitativ_quantitativ.html" class="button scrolly">Weiter</a></span>
+
+
+</div>
+
+		</div>
+
+
+	
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; <a href="https://www.germanistik.hhu.de/abteilungen/abteilung-i-germanistische-sprachwissenschaft/univ-prof-dr-alexander-ziem/team-des-lehrstuhls-univ-prof-dr-alexander-ziem/alexander-willich-ma">Alexander Willich</a>  & <a href="https://www.germanistik.hhu.de/abteilungen/abteilung-i-germanistische-sprachwissenschaft/univ-prof-dr-alexander-ziem/team-des-lehrstuhls-univ-prof-dr-alexander-ziem/jun-prof-dr-stefan-hartmann">Stefan Hartmann</a>, <a href="creativecommons.org/by/4.0" target="_blank">CC-BY 4.0</a>. Gefördert vom <a href="https://www.elearning.hhu.de/projektfoerderung/elearning-foerderfonds" target="_blank"> e-Learning-Förderfonds der HHU Düsseldorf</a>.</li><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery-ui.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/quizlib.1.0.1.min.js"></script>
+			<script src="../assets/js/quiz.js"></script>
+			<script src="../assets/js/quizlib/quiz_fragestellungen_hypothesen.js"></script>
+			<script src="../assets/js/accordion.js"></script>
+			<script src="../assets/js/dragndropquiz.js"></script>
+			<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+
+	
+
+	</body>
+</html>
