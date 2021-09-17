@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="de">
+	<head>
+		<title>Visualisierung mit Excel</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/quizlib.min.css" />
+		<link rel="stylesheet" href="../../assets/css/quizlib_stylesheet.css" />
+		<link rel="icon" href="../../images/empiricalmethods-logo-favicon.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><a href="../../index.html"><img src="../../images/empiricalmethods-logo-small.png" alt="" /></a></span>
+							<h1 id="title"><a href="../../index.html">Empirische Methoden</a></h1>
+							<p style="text-align:right;"><a href="../../index.html">für die Sprachwissenschaft</a></p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#balken" id="top-link"><span class="icon solid fa-coffee">Einfache Balkendiagramme</span></a></li>
+								<li><a href="#linien" id="top-link"><span class="icon solid fa-coffee">Liniendiagramme</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="https://github.com/empirical-linguistics/" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:hartmast@hhu.de" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Datenvisualisierung mit Excel</h2>
+								
+							</header>
+
+						</div>
+					</section>
+
+				<!-- Allgemeines -->
+					<section id="balken" class="two">
+						<div class="container">
+
+							<h2>Einfache Balkendiagramme</h2>
+
+							
+
+
+
+</div>
+
+</section>
+
+<section id="linien" class="three">
+	<div class="container">
+
+
+		<h2>Liniendiagramme</h2>
+
+		<p>Im obigen Beispiel konnten wir gut mit Balkendiagrammen arbeiten, weil wir es mit zwei kategorialen Variablen zu tun hatten, die ihrerseits nur wenige Variablenausprägungen aufwiesen: Die Variable “Lemma” hatte zwei Ausprägungen, programmiert und vorprogrammiert, die Variable “Lesart” drei (wörtlich, metaphorisch, unklar). Sobald kontinuierliche Variablen hinzukommen, hat das oben gewählte Vorgehen der Datenaggregation den gravierenden Nachteil, dass Informationen verlorengehen. Wenn wir beispielsweise mit einer Zeitreihe von 1900 bis 2000 arbeiten, könnten wir die Jahreszahlen beispielsweise nach Jahrzehnt gruppieren (1900–1909, 1910–1919 etc.) und damit die kontinuierliche Variable in eine kategoriale überführen, um etwa ein Balkendiagramm nutzen zu können. In manchen Fällen kann das auch sinnvoll sein, etwa wenn man zu wenige Daten hat, um sinnvoll etwas über die einzelnen Jahre aussagen zu können. In den meisten Fällen aber werden wir die zusätzliche Information, die wir dadurch haben, dass Daten für jedes einzelne Jahr vorliegen, nutzen und auch in der graphischen Darstellung sichtbar machen wollen.</p>
+
+<p>Zum Glück gibt es eine Reihe von Visualisierungsmöglichkeiten, die uns genau das erlauben. Eine sehr einfache und weitverbreitete Möglichkeit ist das Liniendiagramm. Angenommen, wir wollen mit Hilfe der DWDS-Korpora die Frequenz von programmiert und vorprogrammiert über das 20. Jahrhundert hinweg, so können wir das z.B. mit Hilfe der auf der DWDS-Website verfügbaren Wortverlaufskurven machen. Das Ergebnis sieht dann so aus:</p>
+
+<img alt="Wortverlaufskurve: programmiert und vorprogrammiert" style="margin-right:15px;" src="../images/Datenvisualisierung/wortverlaufskurve_programmiert.png" width="70%"/>
+
+<p>Aber natürlich wollen wir eine solche Grafik selbst erstellen können und arbeiten deshalb mit den rohen Frequenzdaten, die ich über kaskade.dwds.de/dstar erhoben habe. Wenn Sie sich für die Suchanfragen interessieren, klicken Sie bitte auf "Mehr dazu".</p>
+
+<button class="accordion">Mehr dazu</button>
+
+<div class="panel">
+
+	<p>Die Gesamtzahl der Tokens wurde gefunden mit der Suchanfrage <code>count(* #sep) #by[date/1]</code>.</p>
+
+<p>Die Frequenz von <i>programmiert</i> und <i>vorprogrammiert</i> wurde gefunden mit <code>count(@programmiert || @vorprogrammiert #sep) #by[$w, date/1]</code>.</p>
+
+
+</div>
+
+
+<p>Sie finden sie in der Datei <a href="https://github.com/empirical-linguistics/ems/raw/main/datenvisualisierung/images/Datenvisualisierung/programmiert_vorprogrammiert_Frequenz.xlsx">programmiert_vorprogrammiert_frequenz.xlsx</a>. Die darin enthaltene Tabelle hat vier Spalten: 1. das Jahr, 2. die Gesamtzahl der Tokens, die das Korpus für dieses Jahr enthält, 3. die Frequenz von programmiert im gegebenen Jahr, 4. die Frequenz von vorprogrammiert im gegebenen Jahr. </p>
+
+<p>In Excel können wir mit Hilfe sog. <strong>Pivot Charts</strong> flexible Visualisierungsmöglichkeiten nutzen. </p>
+
+<p>Dafür klicken wir im Reiter “Einfügen” auf PivotChart und kommen auf die gleiche Übersicht, die wir aus Pivot-Tabellen kennen. Auch hier können wir wieder im Auswahlmenü ganz rechts Häkchen bei den Variablen setzen, die uns interessieren  – in unserem Fall “Jahr”, “RelFreq_programmiert” und “RelFreq_vorprogrammiert”. Die beiden Spalten zeigen die Frequenz pro 100.000 Wörter, deshalb sind die Werte etwas anders als in der oben dargestellten Wortverlaufskurve (die z.T. auch auf anderen Daten beruht, da die Wortverlaufskurven-Funktion des DWDS nicht die Möglichkeit bietet, nur das Kernkorpus als Datengrundlage zu nehmen).</p>
+
+<p>In der PivotChart-Ansicht können wir im Reiter “Design” den Diagrammtyp ändern und ein Liniendiagramm auswählen. Wenn wir die Variable “Jahr” nun in das Feld “Achse” und die beiden RelFreq-Spalten in das Feld “Werte” ziehen, erhalten wir ein Liniendiagramm, in dem die beiden Linien getrennt voneinander dargestellt werden. Wir können die Grafik etwas übersichtlicher gestalten, indem wir die Jahre, in denen (vor)programmiert ohnehin nicht belegt ist, herausfiltern, was einfach mit Klick auf das kleine Dreieck am “Jahr”-Feld in der Tabelle ganz links geht.</p>
+
+<img alt="Beispiel für ein Pivot-Chart" style="margin-right:15px;" src="../images/Datenvisualisierung/pivotchart.png" width="70%"/>
+
+<p>Bei allen Diagrammen ist es sinnvoll, aussagekräftige Achsenbeschriftungen für die x- und y-Achse hinzuzufügen. Während in unserem Beispiel die Interpretation der x-Achse relativ offensichtlich ist (es handelt sich um Jahre), ist nicht auf den ersten Blick zu erkennen, dass die y-Achse die Frequenz pro 100.000 Wörter zeigt. Das können wir ändern, indem wir im Tab “Design” Chart-Elemente hinzufügen, nämlich horizontale und vertikale Achsentitel.</p>
+
+<img alt="Hinzufügen eines Chart-Elements über den entsprechenden Button" style="margin-right:15px;" src="../images/Datenvisualisierung/addchartelement.png" width="70%"/>
+
+
+		
+
+
+
+
+		</div>
+</section>
+
+<section id="linien" class="four">
+	<div class="container">
+
+<h2>Excel-Diagramme exportieren</h2>
+
+<p>Wenn Sie ein in Excel erstelltes Diagramm in Ihre Arbeit einbauen möchten, ist es sinnvoll, es als Grafikdatei zu exportieren. Es gibt zwar auch die Möglichkeit, das Diagramm einfach z.B. in Word zu copy&pasten, aber mehrere Gründe sprechen dafür, lieber mit einer Bilddatei zu arbeiten – so ist die Bilddatei statisch, während eine in Word gepastete Excel-Grafik oft noch mit der Excel-Tabelle verbunden bleibt, was zur Folge hat, dass sie sich ändert, wenn Sie die Excel-Datei ändern. Das kann praktisch sein, aber auch hinderlich, etwa wenn Sie versehentlich Änderungen in der Excel-Tabelle vornehmen. Und spätestens wenn Sie einmal einen “echten” Aufsatz für eine Zeitschrift oder einen Sammelband schreiben, werden Sie an separaten Bilddateien kaum vorbeikommen.</p>
+
+<p>Leider sind die Exportmöglichkeiten für Grafiken bei Excel eher bescheiden. Ein nicht vollends befriedigender, aber einigermaßen praktikabler Workaround besteht darin, einfach einen Screenshot zu machen. Unter Windows geht das mit dem Programm “Snipping Tool”, das man mit Windows + Umschalt + S aufrufen kann, auf dem Mac funktioniert es mit Cmd + Control + 4 (Screenshot wird gespeichert) oder Cmd + Control + Umschalt + 4 (Screenshot wird in die Zwischenablage kopiert).</p>
+
+<span style="font-size:25px;float:left;"><a href="../index.html" class="button scrolly">Zurück</a></span>
+<span style="font-size:25px;float:center;"><a href="../../index.html" class="button scrolly">Hauptseite</a></span>
+<span style="font-size:25px;float:right;"><a href="02_qualitativ_quantitativ.html" class="button scrolly">Zu Calc</a></span>
+		</div>
+
+		</section>
+
+
+
+		</div>
+
+
+	
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; <a href="https://www.germanistik.hhu.de/abteilungen/abteilung-i-germanistische-sprachwissenschaft/univ-prof-dr-alexander-ziem/team-des-lehrstuhls-univ-prof-dr-alexander-ziem/alexander-willich-ma">Alexander Willich</a>  & <a href="https://www.germanistik.hhu.de/abteilungen/abteilung-i-germanistische-sprachwissenschaft/univ-prof-dr-alexander-ziem/team-des-lehrstuhls-univ-prof-dr-alexander-ziem/jun-prof-dr-stefan-hartmann">Stefan Hartmann</a>, <a href="creativecommons.org/by/4.0" target="_blank">CC-BY 4.0</a>. Gefördert vom <a href="https://www.elearning.hhu.de/projektfoerderung/elearning-foerderfonds" target="_blank"> e-Learning-Förderfonds der HHU Düsseldorf</a>.</li><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery-ui.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/quizlib.1.0.1.min.js"></script>
+			<script src="../assets/js/quiz.js"></script>
+			<script src="../assets/js/quizlib/quiz_fragestellungen_hypothesen.js"></script>
+			<script src="../assets/js/accordion.js"></script>
+			<script src="../assets/js/dragndropquiz.js"></script>
+			<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+
+	
+
+	</body>
+</html>

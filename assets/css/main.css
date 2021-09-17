@@ -39,6 +39,12 @@ body {
 	line-height: 1;
 }
 
+code{
+	text-align: left;
+	font-family: 'Courier New', Courier, monospace;
+	color: #0b3b5f;
+}
+
 /* ol, ul {
 	list-style: none;
 } */
