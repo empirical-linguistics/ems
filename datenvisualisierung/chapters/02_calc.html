@@ -6,7 +6,7 @@
 -->
 <html lang="de">
 	<head>
-		<title>Visualisierung mit Excel</title>
+		<title>Visualisierung mit Calc</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
@@ -31,8 +31,12 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="#balken" id="top-link"><span class="icon solid fa-coffee">Einfache Balkendiagramme</span></a></li>
-								<li><a href="#linien" id="top-link"><span class="icon solid fa-coffee">Liniendiagramme</span></a></li>
+								<li><a href="#balken" id="top-link"><span class="icon solid fa-chart-bar">Einfache Balkendiagramme</span></a></li>
+								<li><a href="#linien" id="top-link"><span class="icon solid fa-chart-line">Liniendiagramme</span></a></li>
+                                <li><a href="#exp" id="top-link"><span class="icon solid fa-file-export">Datenexport</span></a></li>
+                                <ul style="padding-left: 6%;">
+									<li><a href="01_excel.html" id="top-link"><span class="icon solid fa-file-export">Zu Excel</span></a></li>
+								</ul>
 							</ul>
 						</nav>
 
@@ -58,7 +62,7 @@
 						<div class="container">
 
 							<header>
-								<h2 class="alt">Datenvisualisierung mit Excel</h2>
+								<h2 class="alt">Datenvisualisierung mit Calc</h2>
 								
 							</header>
 
@@ -70,6 +74,52 @@
 						<div class="container">
 
 							<h2>Einfache Balkendiagramme</h2>
+
+                            <p>Als Beispiel nutzen wir die Daten zur Konkurrenz von <i>programmiert</i> und <i>vorprogrammiert</i> aus dem DWDS (siehe Tutorial zur Korpuslinguistik). Es handelt sich um einen kleinen Datensatz mit Belegen für <i>programmiert</i> und <i>vorprogrammiert</i>, die daraufhin annotiert wurden, a) ob das Partizip attributiv oder prädikativ gebraucht wird (<i>der programmierte Computer</i> vs. <i>der Computer ist programmiert</i>), b) ob es sich auf das Objekt des Programmiervorgangs bezieht (<i>die Maschine wird programmiert</i>) oder auf das Resultat des Programmiervorgangs (<i>die Maschine ist programmiert</i>) und c) ob <i>programmieren</i> im wörtlichen Sinn gebraucht wird (<i>die Maschine ist programmiert</i>) oder im übertragenen, metaphorischen Sinn (<i>der Skandal ist programmiert</i>). Die Daten können Sie <a href="https://github.com/empirical-linguistics/ems/raw/main/datenvisualisierung/images/Datenvisualisierung/programmiert_vorprogrammiert_dwds.ods">hier</a> im LibreOffice-Format ODS oder <a href="https://raw.githubusercontent.com/empirical-linguistics/ems/main/datenvisualisierung/images/Datenvisualisierung/programmiert_vorprogrammiert_dwds.csv">hier</a> als CSV-Datei herunterladen.</p>
+<p>Ideal für die Auswertung und Visualisierung solcher Daten in Calc ist die PivotTable-Funktion. Mit dieser Funktion kann man sogenannte Pivot-Tabellen erstellen und direkt visualisieren. Mit Pivot-Tabellen sind Tabellen gemeint, die es erlauben, Daten aus einer bestehenden Tabelle, die als Dreh- und Angelpunkt (pivot) dient, zusammenzufassen, ohne dafür die ursprüngliche Tabelle zu verändern. Das nutzt man, um Daten zu aggregieren: Angenommen, wir haben eine Ergebnistabelle einer Umfrage, in der jede Teilnehmerin oder jeder Teilnehmer aus zwei Gruppen (Gruppe 1 und Gruppe 2) eine Frage mit Ja oder Nein beantworten musste. Nach dem Tidy-Data-Prinzip erscheinen die Ergebnisse jedes Teilnehmenden in der Tabelle in einer eigenen Zeile (links):</p>
+
+<img alt="Beispiel einer Pivot-Tabelle" style="margin-right:15px;" src="../images/Datenvisualisierung/pivottable.png" width="80%"/>
+
+<p>Eine Pivot-Tabelle fasst nun diese Einzeldaten zusammen (aggregiert sie), indem sie uns beispielsweise anzeigt, wie viele Personen in der jeweiligen Gruppe mit “Ja” oder “Nein” geantwortet haben (rechts).</p>
+<p>In Calc findet sich die PivotTable-Funktion im Dropdown-Menü “Data”. Mit ihr können wir Daten in Tabellen zusammenfassen, um daraus dann Visualisierungen zu erstellen. </p>
+
+<p>Öffnen wir zunächst den <i>programmiert_vorprogrammiert</i>-Datensatz in Calc. Mit Hilfe von Insert > PivotTable gelangt man in ein Auswahlmenü, in dem rechts die einzelnen Spaltennamen als “available fields” zu sehen sind. Links sehen wir drei rechteckige Felder: eins für Zeilen, eins für Spalten und eins für Werte (das Letztere trägt die nicht ganz so aussagekräftige Überschrift “Data fields”). Aus der Auflistung rechts können wir nun die Variablen, die wir in den Spalten sehen wollen, ins “Spalten”-Feld ziehen, diejenigen, die wir in den Zeilen sehen wollen, ins “Zeilen”-Feld und schließlich diejenigen, die Calc für uns auszählen soll, ins “Data fields”-Feld.</p>
+
+<img alt="Screenshot der Felderauswahl für die Erstellung einer Pivot-Tabelle in Calc" style="margin-right:15px;" src="../images/Datenvisualisierung/availablefields_calc.png" width="80%"/>
+
+
+<p>Wir ziehen die Variablen “Hit” und “Lesart” ins “Row”-Feld und zusätzlich “Lesart”  ins “Data fields”-Feld, da wir uns die Lesarten (wörtlich vs. metaphorisch) ja auszählen lassen wollen. Nun müssen wir allerdings beachten, dass Calc defaultmäßig die Summe ausrechnen will, statt die Werte auszuzählen! Dafür doppelklicken wir auf “Sum - Lesart” im “Data fields”-Feld und wählen “Count” aus. Nun sehen wir hier “Count - Lesart”, was die Operation ist, die wir wollen.</p>
+
+<p>Beim Erstellen der Pivot-Tabelle können wir in den ausklappbaren Optionen auch auswählen, dass wir keine Zeilen- und Spaltensummen sehen wollen (die brauchen wir nicht, zumal sie dann ggf. auch in den auf der Tabelle basierenden Visualisierungen dargestellt werden und da nur verwirren) und dass wir Filter setzen möchten – diese Option ist (leider) nicht voraktiviert. Nun sieht das Ganze so aus:</p>
+
+<img alt="Layout-Fenster für Pivot-Tabellen in Calc" style="margin-right:15px;" src="../images/Datenvisualisierung/pivottablelayoutcalc.png" width="80%"/>
+
+
+<p>Wenn wir nun auf OK klicken, sehen wir die Pivot-Tabelle, oberhalb derer sich ein “Filter”-Feld befindet, auf das wir doppelklicken können, um durch Auswählen des Attribut-Wert-Paars “praedikativ = y” die Tabelle so zu filtern, dass nur die prädikativen Belege angezeigt werden.</p>
+
+<img alt="Screenshot: Setzen eines Filters in Calc" style="margin-right:15px;" src="../images/Datenvisualisierung/praedikativfilter.png" width="80%"/>
+
+<p>Mit Hilfe der Tabelle können wir nun die Verteilung auch visualisieren, z.B. mit einem Balkendiagramm. Das ist über Insert > Chart möglich. Hier haben wir die Wahl zwischen mehreren Optionen und wählen ein sog. gestapeltes Balkendiagramm, das die prozentuale Verteilung anzeigt. </p>
+<p>Spielen Sie gern ein bisschen herum, erstellen Sie verschiedene Diagramme und löschen Sie sie dann wieder. Vieles ist im Vergleich zu Excel hier etwas unintuitiv – beispielsweise auch das Löschen von Diagrammen: Wenn Sie ein Diagramm löschen wollen, aber gleichzeitig noch irgendwo eine Spalte ausgewählt ist, wird eine wenig informative Fehlermeldung erscheinen.</p>
+<p>Im Gegensatz zu Excel bietet Calc derzeit leider keine Möglichkeit, sich in Pivot-Tabellen Nullwerte anzeigen zu lassen. Das heißt, wenn wir im Balkendiagramm die Kategorien “lit” und “unklar” auch für vorpgrammiert sehen wollen, um das Diagramm symmetrisch zu halten, müssen wir sie irgendwie manuell einfügen, weil für vorprogrammiert ja nur metaphorische Lesarten belegt sind. Ein etwas uneleganter, aber funktionierender Workaround sieht so aus: Weil wir an der Pivot-Tabelle selbst nichts verändern können, copy&pasten wir sie an eine andere Stelle im Arbeitsblatt und ergänzen die fehlenden Kategorien manuell. Das ist zwar, wie es ein User in einem Frage-und-Antwort-Forum zu diesem Thema sehr schön formuliert hat, weniger eine Lösung als eine Kapitulation, aber zumindest für diesen recht überschaubaren Datensatz funktioniert der Ansatz. Das Ergebnis finden Sie im Tabellenblatt “manuelle_Werte” der ODS-Datei:</p>
+
+<img alt="Screenshot: Erstellen eines Barplots in Calc" style="margin-right:15px;" src="../images/Datenvisualisierung/calcbarplot01.png" width="80%"/>
+
+<p>Der Screencast unten erklärt das Zustandekommen dieser für die Visualisierung gut geeigneten Anordnung der Datenpunkte noch etwas genauer.</p>
+<p>Das Balkendiagramm erstellen wir nun, indem wir die Zellen, die die Daten enthalten, markieren und mit Klick auf das Chart-Icon (“Insert Chart”) das Ganze in eine Grafik überführen.</p>
+<p>Zuletzt wollen wir die Balken noch mit Labels versehen, d.h. wir wollen die absoluten Werte auf den Balken anzeigen. Auch hier kann Excel etwas mehr als Calc, und wir müssen etwas tricksen, um die absoluten Werte anzeigen zu lassen. Mit Rechtsklick auf einen der Balken > Insert Data Labels können wir zunächst die Labels anzeigen lassen, sehen aber erstens keine absoluten Werte, sondern Prozentwerte, und zweitens absurde Prozentwerte, weil Calc offenbar die Zahlen in der Tabelle für relative Werte hält. Mit Doppelklick auf eines der Labels können wir jedoch das Zahlenformat ändern und angeben, dass wir die Labels einfach als “Text” angezeigt bekommen wollen – also einfach das, was in der Pivot-Tabelle selbst steht.</p>
+
+<p>Der folgende Screencast zeigt noch einmal zusammengefasst anhand der <i>programmiert/vorprogrammiert</i>-Daten, wie wir ein einfaches Balkendiagramm erstellen können.</p>
+
+
+                            <iframe width='570' height='321' style='width: 570px; height: 321px; border: 1px solid #ccc;' src='https://mediathek.hhu.de/embed/1ac16d5c-f290-4f81-95b7-11f4be868619' frameborder='0' allowfullscreen></iframe>
+
+                            <p>Wenn Sie das erstellte Balkendiagramm nun exportieren möchten, können Sie in Calc die Funktion "Export as Image" nutzen, wie im folgenden Screencast erklärt. Diese Funktion eignet sich besonders zum Export von Vektorgrafiken (SVG-Dateiformat). Wenn Sie die Grafik in einem Format wie PNG oder JPG brauchen, beachten Sie bitte die Hinweise im Abschnitt <a href="#exp">Datenexport.</a> </p>
+                            
+                            <iframe width='570' height='321' style='width: 570px; height: 321px; border: 1px solid #ccc;' src='https://mediathek.hhu.de/embed/9f2f0870-28ed-42f1-a650-cde3c8f72be6' frameborder='0' allowfullscreen></iframe>
+
+                           
+
 
 							
 
@@ -105,19 +155,16 @@
 </div>
 
 
-<p>Sie finden sie in der Datei <a href="https://github.com/empirical-linguistics/ems/raw/main/datenvisualisierung/images/Datenvisualisierung/programmiert_vorprogrammiert_Frequenz.xlsx">programmiert_vorprogrammiert_frequenz.xlsx</a>. Die darin enthaltene Tabelle hat vier Spalten: 1. das Jahr, 2. die Gesamtzahl der Tokens, die das Korpus für dieses Jahr enthält, 3. die Frequenz von programmiert im gegebenen Jahr, 4. die Frequenz von vorprogrammiert im gegebenen Jahr. </p>
+<p>Sie finden sie <a href="https://github.com/empirical-linguistics/ems/raw/main/datenvisualisierung/images/Datenvisualisierung/programmiert_vorprogrammiert_Frequenz.ods">hier</a> im LibreOffice-Format ODS oder <a href="https://raw.githubusercontent.com/empirical-linguistics/ems/main/datenvisualisierung/images/Datenvisualisierung/programmiert_vorprogrammiert_Frequenz.csv">hier</a> im CSV-Format. </p>
 
-<p>In Excel können wir mit Hilfe sog. <strong>Pivot Charts</strong> flexible Visualisierungsmöglichkeiten nutzen. </p>
-
-<p>Dafür klicken wir im Reiter “Einfügen” auf PivotChart und kommen auf die gleiche Übersicht, die wir aus Pivot-Tabellen kennen. Auch hier können wir wieder im Auswahlmenü ganz rechts Häkchen bei den Variablen setzen, die uns interessieren  – in unserem Fall “Jahr”, “RelFreq_programmiert” und “RelFreq_vorprogrammiert”. Die beiden Spalten zeigen die Frequenz pro 100.000 Wörter, deshalb sind die Werte etwas anders als in der oben dargestellten Wortverlaufskurve (die z.T. auch auf anderen Daten beruht, da die Wortverlaufskurven-Funktion des DWDS nicht die Möglichkeit bietet, nur das Kernkorpus als Datengrundlage zu nehmen).</p>
-
-<p>In der PivotChart-Ansicht können wir im Reiter “Design” den Diagrammtyp ändern und ein Liniendiagramm auswählen. Wenn wir die Variable “Jahr” nun in das Feld “Achse” und die beiden RelFreq-Spalten in das Feld “Werte” ziehen, erhalten wir ein Liniendiagramm, in dem die beiden Linien getrennt voneinander dargestellt werden. Wir können die Grafik etwas übersichtlicher gestalten, indem wir die Jahre, in denen (vor)programmiert ohnehin nicht belegt ist, herausfiltern, was einfach mit Klick auf das kleine Dreieck am “Jahr”-Feld in der Tabelle ganz links geht.</p>
-
-<img alt="Beispiel für ein Pivot-Chart" style="margin-right:15px;" src="../images/Datenvisualisierung/pivotchart.png" width="70%"/>
-
-<p>Bei allen Diagrammen ist es sinnvoll, aussagekräftige Achsenbeschriftungen für die x- und y-Achse hinzuzufügen. Während in unserem Beispiel die Interpretation der x-Achse relativ offensichtlich ist (es handelt sich um Jahre), ist nicht auf den ersten Blick zu erkennen, dass die y-Achse die Frequenz pro 100.000 Wörter zeigt. Das können wir ändern, indem wir im Tab “Design” Chart-Elemente hinzufügen, nämlich horizontale und vertikale Achsentitel.</p>
+<p>Das Spreadsheet hat sechs Spalten: 1. das Jahr, 2. die Gesamtzahl der Tokens, die das Korpus für dieses Jahr enthält, 3. die Frequenz von programmiert im gegebenen Jahr, 4. die Frequenz von vorprogrammiert im gegebenen Jahr, 5 und 6: die Frequenz von programmiert bzw. vorprogrammiert pro 100.000 Tokens im jeweiligen Jahr (errechnet, indem Spalte 3 bzw. 4 durch Spalte 2 dividiert wird und der Quotient mit 100.000 multipliziert wird). </p>
+<p>Nun wollen wir die zeitliche Entwicklung der relativen Frequenz von programmiert und vorprogrammiert darstellen. Das ist erfreulich einfach: Zunächst müssen wir die drei relevanten Spalten auswählen. Eine einzelne Spalte wählen wir aus, indem wir ganz oben auf den Buchstaben klicken, der als Index für die Spalte fungiert, z.B. “A” für die Spalte “Jahr”. Das wiederholen wir für die beiden Spalten mit der relativen Frequenz, wobei wir die Strg- bzw. Command-Taste gedrückt halten. So werden die beiden Spalten ebenfalls ausgewählt, ohne dass die Markierung von Spalte A aufgehoben wird. Nun können wir in der Leiste oben “Insert Chart” auswählen (oder im Menüband ganz oben Insert > Chart). Hier müssen wir uns zunächst für einen Diagrammtyp entscheiden – wir nehmen Line > Points and Lines. Mit Klick auf “Next” kommen wir zu dem sehr wichtigen Fenster, in dem wir auswählen, was genau in der Grafik dargestellt werden soll (“Data range”). Hier müssen wir angeben, dass die erste Spalte – das Jahr – als “Label” verwendet wird, wie es bei Calc heißt, also als die Variable, die auf der x-Achse erscheint. Im dritten der vier Fenster, “Data series”, können wir alles unverändert lassen, im vierten können wir noch x- und y-Achsen-Beschriftungen eingeben, was immer sehr empfehlenswert ist. In unserem Fall bieten sich “Jahr” und “Relative Frequenz” als Beschriftungen an. Et voilà, unser Liniendiagramm ist fertig!</p>
 
 <img alt="Hinzufügen eines Chart-Elements über den entsprechenden Button" style="margin-right:15px;" src="../images/Datenvisualisierung/addchartelement.png" width="70%"/>
+
+<p>Der folgende Screencast beschreibt die einzelnen Schritte noch einmal und zeigt auch, wie man die Datei exportieren kann. Der Export ist es auch, dem wir uns im nächsten Abschnitt genauer widmen werden.</p>
+
+<iframe width='570' height='321' style='width: 570px; height: 321px; border: 1px solid #ccc;' src='https://mediathek.hhu.de/embed/8dc4ea61-b49a-4667-866b-bd1b5b9db82b' frameborder='0' allowfullscreen></iframe>
 
 
 		
@@ -128,19 +175,21 @@
 		</div>
 </section>
 
-<section id="linien" class="four">
+<section id="exp" class="four">
 	<div class="container">
 
-<h2>Excel-Diagramme exportieren</h2>
+<h2>Calc-Diagramme exportieren</h2>
 
-<p>Wenn Sie ein in Excel erstelltes Diagramm in Ihre Arbeit einbauen möchten, ist es sinnvoll, es als Grafikdatei zu exportieren. Es gibt zwar auch die Möglichkeit, das Diagramm einfach z.B. in Word zu copy&pasten, aber mehrere Gründe sprechen dafür, lieber mit einer Bilddatei zu arbeiten – so ist die Bilddatei statisch, während eine in Word gepastete Excel-Grafik oft noch mit der Excel-Tabelle verbunden bleibt, was zur Folge hat, dass sie sich ändert, wenn Sie die Excel-Datei ändern. Das kann praktisch sein, aber auch hinderlich, etwa wenn Sie versehentlich Änderungen in der Excel-Tabelle vornehmen. Und spätestens wenn Sie einmal einen “echten” Aufsatz für eine Zeitschrift oder einen Sammelband schreiben, werden Sie an separaten Bilddateien kaum vorbeikommen.</p>
+<p>Manches ist, wie wir gesehen haben, in Calc weniger intuitiv als in Excel – in einem Punkt aber in Calc der kommerziellen Konkurrenz weit überlegen: Während es in Excel noch immer nicht möglich ist, auf einfache Weise Diagramme als hochauflösende Grafiken zu exportieren, genügt in Calc ein Rechtsklick auf die Grafik, und schon erscheint die Option “Export as Image”. (Achten Sie darauf, dass keine Tabellenspalten gleichzeitig ausgewählt sind, sonst erscheint die Option nicht.) Um eine möglichst hohe Auflösung zu gewährleisten, empfiehlt es sich, das Diagramm als Vektorgrafik im SVG-Format (Scalable Vector Graphic) zu exportieren. Die meisten Textverarbeitungs- oder Präsentationsprogramme können inzwischen mit SVG umgehen. Sollten Sie doch eine PNG- oder JPG-Datei benötigen, empfehle ich, zunächst eine SVG-Datei zu exportieren und sie mit Hilfe eines Programms wie <a href="https://inkscape.org/">Inkscape</a> zu konvertieren, wie im folgenden Screencast beschrieben.</p>
 
-<p>Leider sind die Exportmöglichkeiten für Grafiken bei Excel eher bescheiden. Ein nicht vollends befriedigender, aber einigermaßen praktikabler Workaround besteht darin, einfach einen Screenshot zu machen. Unter Windows geht das mit dem Programm “Snipping Tool”, das man mit Windows + Umschalt + S aufrufen kann, auf dem Mac funktioniert es mit Cmd + Control + 4 (Screenshot wird gespeichert) oder Cmd + Control + Umschalt + 4 (Screenshot wird in die Zwischenablage kopiert).</p>
+<iframe width='570' height='321' style='width: 570px; height: 321px; border: 1px solid #ccc;' src='https://mediathek.hhu.de/embed/2f95edbb-1f41-4dd0-9f85-1d6987f2981b' frameborder='0' allowfullscreen></iframe>
+</div>
+<br />
 
-<span style="font-size:25px;float:left;"><a href="../index.html" class="button scrolly">Zurück</a></span>
+<span style="font-size:25px;float:left;"><a href="../index.html" class="button scrolly">< Zurück</a></span>
 <span style="font-size:25px;float:center;"><a href="../../index.html" class="button scrolly">Hauptseite</a></span>
-<span style="font-size:25px;float:right;"><a href="02_qualitativ_quantitativ.html" class="button scrolly">Zu Calc</a></span>
-		</div>
+<span style="font-size:25px;float:right;"><a href="01_excel.html" class="button scrolly">Zu Excel</a></span>
+		
 
 		</section>
 
