@@ -228,7 +228,34 @@
 
 <img src="../img/conc_in_excel_bad.png" style="width:600px" alt="Heruntergeladene Konkordanz bei direktem Öffnen in Excel">
 
-<p>Hier sind einige Sonderzeichen verloren gegangen, weil Excel die Kodierung der Datei nicht richtig erkannt hat. Es gibt mehrere Wege, diesem Problem zu begegnen. Wir sehen uns nun zwei an, je nachdem, welches Tabellenkalkulationsprogramm Sie installiert haben: einen Weg für Excel und einen für die freie Alternative Calc.</p>
+<p>Hier sind einige Sonderzeichen verloren gegangen, weil Excel die Kodierung der Datei nicht richtig erkannt hat. Es gibt mehrere Wege, diesem Problem zu begegnen. Wir sehen uns nun zwei an, je nachdem, welches Tabellenkalkulationsprogramm Sie installiert haben: einen Weg für Excel und einen für die freie Alternative Calc. Näheres zum Datenimport finden Sie auch im Tutorial zur <a href="../../datenaufbereitung/index.html">Datenaufbereitung</a>.</p>
+
+<h3>Import in Excel</h3>
+
+<ol>
+
+	<li>Öffnen Sie die Datei in einem Texteditor. Für Windows empfiehlt sich Notepad++, für Mac die kostenlose (und für unsere Zwecke völlig ausreichende) Version von BBEdit, für Linux gibt es z.B. Notepadqq.</li>
+	<li>Markieren Sie mit Strg+A bzw. Cmd+A den gesamten Text.</li>
+	<li>Öffnen Sie ein leeres Tabellenblatt in Excel. Die nächsten Schritte, 4 bis 7, sind in 2.4 visualisiert.</li>
+	<li>In den meisten Fällen sollten Sie nun einfach mit Strg+V bzw. Cmd+V die Daten einfügen können. In manchen Fällen müssen Sie jedoch, wie im Screencast 2.4, die Option “Paste Special” verwenden (dt. “Inhalte einfügen”) und angeben, dass Sie den Unicode-Text einfügen möchten.</li>
+	<li>Mit Klick auf das kleine Klemmbrett-Symbol gelangen Sie zum Textimport-Assistenten. Hier müssen Sie Excel sagen, wie der eingefügte Text strukturiert ist. Auf der ersten Seite sagen Sie, dass es sich um einen Text handelt, bei dem die einzelnen Spalten durch ein Trennzeichen getrennt sind (“Delimited”) – diese Option ist in der Regel schon angewählt. Außerdem teilen Sie Excel hier mit, dass der eingefügte Text UTF-8-formatiert ist.</li>
+	<li>Auf der nächste Seite des Textimport-Assistenten geben Sie an, dass Kommata als Spaltentrenner benutzt werden. Bei den Textqualifizierern müssen Sie nichts ändern, da hier schon Anführungszeichen ausgewählt sind: Wie Sie in 2.2 sehen können, werden Anführungszeichen in der CSV-Datei genutzt, um zusammengehörigen Text zusammenzuhalten (denn wären sie nicht da, würde Excel jedes Komma im Text für einen Spaltentrenner halten)</li>
+	<li>Dieser letzte Schritt erübrigt sich meistens, kann aber nicht schaden: Zuletzt können Sie noch alle Spalten als “Text” formatieren. (Die Datumsspalte können Sie prinzipiell auch als “Datum” formatieren, falls Sie ausschließlich in Excel weiterarbeiten, aber tendenziell ist davon abzuraten – gerade bei einer späteren Konversion in andere Dateiformate kann dabei alles mögliche schiefgehen.) Tipp: Um alle Spalten auf einmal als “Text” zu formatieren, scrollen Sie einfach im Fenster ganz nach rechts und klicken mit gedrückter Shift-Taste auf die letzte Spalte, dann sind alle Spalten markiert.</li>
+
+</ol>
+
+<iframe width='570' height='321' style='width: 570px; height: 321px; border: 1px solid #ccc;' src='https://mediathek.hhu.de/embed/8f7bb923-a155-44da-96b4-bb3c1d22e598' frameborder='0' allowfullscreen></iframe>
+
+
+<h3>Import in Calc</h3>
+
+<p>Öffnet man die Datei im kostenlosen Tabellenkalkulationsprogramm Calc von LibreOffice (mit Rechtsklick > Öffen mit), so öffnet sich zunächst automatisch der Textimportassistent. Hier muss man Calc mitteilen, welches Format die Datei hat. In unserem Fall ist der Text UTF-8-kodiert, wir haben Kommata als Spaltentrenner und Anführungszeichen als Textqualifizierer.</p>
+
+
+<span style="font-size:25px;float:left;"><a href="../index.html" class="button scrolly">Zurück</a></span>
+<span style="font-size:25px;float:center;"><a href="../../index.html" class="button scrolly">Hauptseite</a></span>
+<span style="font-size:25px;float:right;"><a href="02-konkordanz-zur-analyse.html" class="button scrolly">Weiter</a></span>
+
 
 </div>
 </section>
