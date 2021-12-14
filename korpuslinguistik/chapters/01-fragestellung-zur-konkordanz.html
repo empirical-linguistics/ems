@@ -165,63 +165,7 @@
 							 </div>
 							</div>
 							
-							<!-- 
-							Übung
 							
-							Fragebogenstudie
-							Korpusrecherche
-							- Wie müssen Online-Tutorials in der Linguistik gestaltet sein, um Studierende beim Lernen zu unterstützen?
-							- In welcher Form werden mutmaßliche Täter in der öffentlichen Berichterstattung zu Plagiatsvorwürfen dargestellt?
-							- Welche Faktoren beeinflussen die Studienwahl?
-							- Inwiefern sind fremdsprachliche Begriffe Teil des deutschen Sportjournalismus?
-							
-						-->
-						
-							<!--	<a class="image featured"><img src="images/Grundlegendes/matrix-356024_1280.webp" alt="Buchstaben und Zahlen in grün auf schwarzem Bildschirm" style="width:900px; height:300px; object-fit: cover;" /></a>-->
-		<!--
-							<p class="bookstyle">Versieht man Daten mit zusätzlichen Informationen, so nennt man diesen Prozess <strong>Annotation</strong>. In der Korpuslinguistik stellt die Annotation einen ganz wesentlichen Schritt dar, der gewissermaßen die Brücke schlägt von der qualitativ-philologischen Analyse einzelner Belege zur quantitativen Auswertung.</br>
-								<p></p>
-								<p class="bookstyle">
-								Wir nutzen im Folgenden die Annotation, um unsere Daten in Kategorien zu unterteilen, die für unsere Fragestellung sinnvoll sind. Dafür müssen wir uns zunächst darüber im Klaren sein, was wir von unseren Daten überhaupt wissen wollen, d.h. wir müssen unsere eingangs genannte <strong>Fragestellung operationalisieren</strong>.</br>
-								<p></p>
-								<p class="bookstyle">
-								Zur Erinnerung: Unsere Fragestellung lautet, ob bei prädikativem Gebrauch <em>vorprogrammiert</em> gegenüber <em>programmiert</em> bevorzugt wird, wenn es sich um einen metaphorischen Kontext handelt.</br>
-								<p></p>
-								<p class ="bookstyle">
-								Konkret bedeutet das, dass wir für jeden Datenpunkt folgende Fragen beantworten müssen:</br>
-								<p></p>
-								<p class="bookstyle">
-								1. Handelt es sich um eine prädikative Verwendung? – Schon ein kurzer Blick auf die Daten zeigt, dass sich notwendigerweise einige <strong>Fehltreffer</strong> eingeschlichen haben: Häufig finden sich z.B. Passivkonstruktionen wie <em>Es gibt jedoch medizinische Gründe, aus denen eine Geburt eingeleitet oder sogar programmiert werden muß</em>. Uns interessieren aber nur Fälle, in denen das Partizip selbst das Prädikat bildet, also z.B. <em>Der Computer</em> ist <em>programmiert und Die Katastrophe war vorprogrammiert.</em></br></p>
-								<p class="bookstyle">
-								2. Handelt es sich um eine metaphorische Verwendung? – Während beispielsweise Computer oder Roboter im wörtlichen Sinne programmiert werden, bezieht sich der Begriff bei Krisen und Katastrophen darauf, dass Voraussetzungen geschaffen wurden, die unausweichlich den thematisierten unschönen Ausgang zur Folge haben. Es liegt also ein metaphorischer Gebrauch vor, bei der Aspekte der Quelldomäne “Technik” auf eine abstraktere Zieldomäne übertragen werden.</br></p>
-								<p></p>
-								<p class="bookstyle">In den nächsten Abschnitten wollen wir uns beiden Fragen etwas genauer zuwenden.</p>
-
-								<section id="portfolio" class="two">
-									<div class="container">
-										<div class="row">
-											<div class="col-4 col-12-mobile">
-												<article class="item">
-													<a href="chapters/Annotation_prädikativ_vs_nicht_prädikativ - Kopie.html" class="image fit"><img src="matrix-356024_1280.webp" alt="Matrix" /></a>
-													<header>
-														<h3>prädikativ vs. nicht-prädikativ</h3>
-													</header>
-												</article>
-												<article class="item">
-													<a href="chapters/Annotation_metaphorisch_vs_nicht_metaphorisch.html" class="image fit"><img src="matrix-356024_1280.webp" alt="Matrix" /></a>
-													<header>
-														<h3>metaphorisch vs. nicht-metaphorisch</h3>
-													</header>
-												</article>	
-											</div>
-										</div>
-									</div>
-					</section>	
-
-
-
-				
- -->
 						</div>
 					</section>
 
@@ -248,6 +192,46 @@
 
 						</div>	
 						</section>
+
+						<!-- Fragestellung -->
+						<section id="datenerheben" class="three">
+							<div class="container">
+	
+								<header>
+									<h2>Vom Korpus zur Konkordanz: Daten erheben</h2>
+								</header>
+
+								<h3>Suchsyntax</h3>
+
+								<p>Für die Datenerhebung verwenden wir das DWDS-Kernkorpus des 20. Jahrhunderts, das über dwds.de zugänglich ist. Wir suchen auf der Wortebene mit Hilfe von regulären Ausdrücken nach den Formen programmiert und vorprogrammiert. Dafür benutzen wir den Suchstring</p>
+<p><code>@programmiert || @vorprogrammiert</code></p>
+<p>Das @-Zeichen bedeutet, dass wir genau diese Strings suchen und keine anderen Wortformen wie programmierte, programmiertes etc. Da uns nur die prädikative Verwendung interessiert, brauchen wir die flektierten Wortformen nicht. Der horizontale Strich | ist der ODER-Operator; dass man ihn hier doppelt setzen muss, ist eine Besonderheit der DWDS-Suchsyntax.</p>
+
+<p>Wenn Sie im DWDS eigene Suchanfragen stellen wollen, werden Sie nicht umhinkommen, sich zumindest ansatzweise mit der DWDS-Suchsyntax vertraut zu machen. Einen wichtigen Anlaufpunkt hierfür kann die <a href="https://www.dwds.de/d/korpussuche">Dokumentation</a> auf den Seiten des DWDS bilden.</p>
+
+<h3>Export</h3>
+
+<p>Die Suche liefert uns 88 Treffer, die nun im Browser in ihrem jeweiligen Kontext dargestellt werden. Diese Daten wollen wir nun exportieren, und zwar im “Key Word in Context” (KWIC)-Format. Damit ist gemeint, dass der Suchtreffer zusammen mit seinem unmittelbaren Kontext dargestellt wird. Erfreulicherweise bietet das DWDS eine sehr gute Exportfunktion, die es erlaubt, Daten im CSV-Format zu speichern.</p>
+
+<iframe width='570' height='321' style='width: 570px; height: 321px; border: 1px solid #ccc;' src='https://mediathek.hhu.de/embed/09dc4d6f-6349-4231-8ed4-985a95f97e28' frameborder='0' allowfullscreen></iframe>
+
+<p>Eine solche Sammlung von Korpusbelegen, wie wir sie jetzt exportiert haben, nennt man in der Korpuslinguistik Konkordanz. Der Formatname “CSV” steht für “Comma-Separated Values”. Das heißt, in der Datei sind die einzelnen Werte durch Kommata voneinander abgetrennt. In einem Texteditor sieht das Ganze so aus wie in 2.2. Wie Sie sehen, enthält die Datei neben den Korpusbelegen selbst auch Metadaten zu den einzelnen Belegen, z.B. zu Autor*in, Titel etc.</p>
+
+<img src="../img/conc_in_editor.png" style="width:600px" alt="Screenshot einer Konkordanz">
+
+<p>Damit können wir zunächst noch wenig anfangen: Wir wollen die Konkordanz in ein Tabellenkalkulationsprogramm einlesen.</p>
+
+
+<h3>Import in ein Tabellenkalkulationsprogramm</h3>
+
+<p>Wenn Sie Microsoft Excel auf Ihrem Rechner installiert haben, sind die Default-Einstellungen höchstwahrscheinlich so gesetzt, dass CSV-Dateien in Excel geöffnet werden, wenn Sie darauf doppelklicken. Warum das keine gute Idee ist, zeigt der folgende Screenshot (rote Hervorhebungen von mir nachträglich hinzugefügt).</p>
+
+<img src="../img/conc_in_excel_bad.png" style="width:600px" alt="Heruntergeladene Konkordanz bei direktem Öffnen in Excel">
+
+<p>Hier sind einige Sonderzeichen verloren gegangen, weil Excel die Kodierung der Datei nicht richtig erkannt hat. Es gibt mehrere Wege, diesem Problem zu begegnen. Wir sehen uns nun zwei an, je nachdem, welches Tabellenkalkulationsprogramm Sie installiert haben: einen Weg für Excel und einen für die freie Alternative Calc.</p>
+
+</div>
+</section>
 
 			</div>
 
