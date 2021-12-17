@@ -23,16 +23,24 @@
 
 					<!-- Logo -->
 						<div id="logo">
-							<span class="image avatar48"><a href="../index.html"><img src="../images/empiricalmethods-logo-small.png" alt="" /></a></span>
-							<h1 id="title"><a href="../index.html">Empirische Methoden</a></h1>
-							<p style="text-align:right;"><a href="../index.html">für die Sprachwissenschaft</a></p>
+							<span class="image avatar48"><a href="../../index.html"><img src="../images/empiricalmethods-logo-small.png" alt="" /></a></span>
+							<h1 id="title"><a href="../../index.html">Empirische Methoden</a></h1>
+							<p style="text-align:right;"><a href="../../index.html">für die Sprachwissenschaft</a></p>
 						</div>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="#einf" id="top-link"><span class="icon solid fa-coffee">Einführung</span></a></li>
+								<li><a href="#einf" id="top-link"><span class="icon solid fa-coffee">Annotation</span></a></li>
+								<ul style="padding-left: 6%;">
+									<li><a href="#excel-anno" id="portfolio-link"><span class="icon solid fa-file-excel">In Excel</span></a></li>
+									<li><a href="#calc-anno" id="portfolio-link"><span class="icon solid fa-table">In Calc</span></a></li>
+								</ul>
 								<li><a href="#ausw" id="portfolio-link"><span class="icon solid fa-exclamation-circle">Auswertung und Visualisierung</span></a></li>
+								<ul style="padding-left: 6%;">
+									<li><a href="#excel" id="portfolio-link"><span class="icon solid fa-file-excel">In Excel</span></a></li>
+									<li><a href="#calc" id="portfolio-link"><span class="icon solid fa-table">In Calc</span></a></li>
+								</ul>
 								
 							</ul>
 						</nav>
@@ -91,17 +99,18 @@
 </ol>
 
 
-<i>In den nächsten Abschnitten wollen wir uns beiden Fragen etwas genauer zuwenden.</i>
+<p>In den nächsten Abschnitten wollen wir uns beiden Fragen etwas genauer zuwenden.</p>
 
 <h3>Annotation prädikativ vs. nicht-prädikativ</h3>
 
-W<p>
-	enn wir Daten annotieren, besteht eine wesentliche Herausforderung immer in der Operationalisierung konkreter Fragestellungen. In vielen Fällen ist es so, dass wir die Frage, die uns interessiert, auf den ersten Blick für jeden Datenpunkt klar beantworten zu können glauben. Bei genauerem Hinsehen ergeben sich dann aber doch einige Zweifelsfälle.
+<p>
+	Wenn wir Daten annotieren, besteht eine wesentliche Herausforderung immer in der Operationalisierung konkreter Fragestellungen. In vielen Fällen ist es so, dass wir die Frage, die uns interessiert, auf den ersten Blick für jeden Datenpunkt klar beantworten zu können glauben. Bei genauerem Hinsehen ergeben sich dann aber doch einige Zweifelsfälle.
 	So ist es auch hier: Um die Frage operationalisieren zu können, muss man zunächst einmal die Entscheidung treffen, ob man eine Struktur wie <i>Der Computer ist programmiert</i> als Zustandspassiv mit sein als Hilfsverb (analog zum Vorgangspassiv mit werden als Hilfsverb) oder als Konstruktion aus der Kopula <i>sein</i> und dem Partizip II programmiert interpretiert. Wir entscheiden uns hier für Letzteres. Jedoch zeigt dieses Beispiel: Wie wir Daten interpretieren, hängt oft genug von unserem theoretischen Zugang ab. Das ist nicht weiter schlimm, sondern liegt in der Natur der Sache – Wissenschaft kann nie ganz frei von Theorie und nie ganz frei von Interpretation sein. Wichtig ist, dass die Entscheidung, die wir treffen, sich gut begründen lässt und konsequent durchgehalten wird. Näheres dazu erörtern wir im Tutorial zur <a href="../../datenannotation/index.html">Datenannotation</a>.
 </p>
 
 <p>Wie setzen wir die Annotation nun in unserer Tabelle um? Auch hier sehen wir uns wieder Wege für Excel und Calc an. Gerade die unten skizzierte Möglichkeit, Daten als “Tabelle” zu formatieren, ist an Excel sehr hilfreich, weshalb es sich i.d.R. anbietet, Excel zu bevorzugen. Allerdings ist es auch wichtig, sich in der Wissenschaft nicht von proprietärer Software oder proprietären Datenformaten abhängig zu machen, und nicht jede Uni hat eine Office-Lizenz – deshalb haben Sie auch die Möglichkeit, den Weg der freien Alternative zu gehen.</p>
 
+<div id="excel-anno">
 
 <h3>Umsetzung in Excel</h3>
 
@@ -128,6 +137,10 @@ W<p>
 
 	<img alt="Hinzufügen eines Zeilenumbruchs" style="margin-right:15px;" src="../images/excellinewrap.gif" width="70%"/>
 
+</div>
+
+<div id="calc-anno">
+
 	<h3>Umsetzung in Calc</h3>
 
 	<p>In Calc empfiehlt es sich, zunächst einmal die Spaltenbreite anzupassen und nicht benötigte Spalten auszublenden (nicht löschen – im Zweifelsfall niemals Spalten oder Zeilen löschen, wer weiß, wofür man sie noch benötigt!). Es empfiehlt sich, alle Spalten bis auf diejenigen mit den eigentlichen Belegen (linker Kontext, Treffer, rechter Kontext) auszublenden und die Spalte mit dem linken Kontext so zu formatieren, dass der Text rechtsbündig angezeigt wird. So kann bequem der Beleg vom linken Kontext über den Treffer bis zum Keyword gelesen werden.</p>
@@ -139,6 +152,8 @@ W<p>
 <p>Um Zeit zu sparen, kann man auch nur einen der beiden Werte annotieren und dann die leeren Zellen einfach auffüllen. Dafür müssen wir zunächst einen Filter setzen, wie in 3.4 gezeigt. Über diesen Filter können wir jetzt die leeren Zellen ausblenden, Hier sind die “y”-Werte schon annotiert, alle anderen Zeilen sind leer. Nun filtert man erst die “praedikativ”-Spalte so, dass nur noch die leeren Zellen zu sehen sind, indem man die Zellen mit dem Wert “y” abwählt. Dann markiert man die Spalte “praedikativ” von der ersten bis zur letzten Zeile (die Überschrift wird nicht mitmarkiert). Gibt man nun “n” ein (noch nicht Enter drücken!!), so erscheint der Wert zunächst in der ersten Zeile. Drückt man nun statt der Eingabetaste Alt+Enter, so wird der in der ersten Zeile eingegebene Wert auf alle folgenden Zellen übertragen.</p>
 <p>Damit ist die Spalte nun vollständig ausgefüllt.</p>
 <p>Auf den Datenimport und die Formatierung von Tabellen gehen wir auch im <a href="../../datenaufbereitung/index.html">Tutorial zur Datenaufbereitung</a> ein.</p>
+
+</div>
 
 <h3>Annotation metaphorisch vs. nicht-metaphorisch</h3>
 
@@ -187,6 +202,8 @@ W<p>
 		<h2>Auswertung und Visualisierung</h2>
 
 		<p>Nachdem wir nun die Daten annotiert haben, können wir unsere Annotationen quantitativ auswerten. Auch hier haben Sie wieder die Wahl zwischen einzelnen Wegen für Excel und Calc.</p>
+
+		<div id="excel">
 
 		<h3>Auswertung und Visualisierung in Excel</h3>
 
@@ -237,6 +254,10 @@ W<p>
 
 <p>Und noch etwas Feinjustierung: Damit die Grafik nicht so asymmetrisch aussieht wie hier, werden (im ersten Schritt im obigen Screencast) zunächst die Feldeinstellungen so verändert, dass auch Felder mit Null-Werten angezeigt werden. Anschließend wird ein Balkendiagramm ausgewählt, das den prozentualen Anteil der jeweiligen Variante darstellt. Durch Rechtsklick auf die Balken kann man außerdem noch “Data Labels” hinzufügen, d.h. die absoluten Werte in den Balken darstellen lassen. Das ist empfehlenswert, weil so die Leser*innen schnell einen Eindruck gewinnen können, wie groß die Datenbasis ist, auf der die Darstellung basiert – denn es macht ja schon einen gewichtigen Unterschied, ob eine Verteilung wie, sagen wir 10% : 90% auf zehn, auf hundert oder auf tausend Datenpunkten basiert! Die “Data Labels” kann man hinzufügen durch Rechtsklick auf die Balken und Klick auf den Punkt “Show data labels”.</p>
 
+</div>
+
+<div id="calc">
+
 <h3>Auswertung und Visualisierung in Calc</h3>
 
 <p>Auch in Calc gibt es eine PivotTable-Funktion, die sich im Dropdown-Menü “Data” findet. Mit Hilfe von PivotTable > Erstellen gelangt man in ein Auswahlmenü, in dem rechts die einzelnen Spaltennamen als “available fields” zu sehen sind. Links sehen wir drei rechteckige Felder: eins für Zeilen, eins für Spalten und eins für Werte (das Letztere trägt die nicht ganz so aussagekräftige Überschrift “Data fields”). Aus der Auflistung rechts können wir nun die Variablen, die wir in den Spalten sehen wollen, ins “Spalten”-Feld ziehen, diejenigen, die wir in den Zeilen sehen wollen, ins “Zeilen”-Feld und schließlich diejenigen, die Calc für uns auszählen soll, ins “Data fields”-Feld.</p>
@@ -258,6 +279,7 @@ W<p>
 
 <p></p>
 
+</div>
 
 <span style="font-size:25px;float:left;"><a href="01-fragestellung-zur-konkordanz.html" class="button scrolly">Zurück</a></span>
 <span style="font-size:25px;float:center;"><a href="../../index.html" class="button scrolly">Hauptseite</a></span>
