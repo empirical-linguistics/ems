@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="../assets/css/quizlib.min.css" />
 		<link rel="stylesheet" href="../assets/css/quizlib_stylesheet.css" />
+		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 		<link rel="icon" href="../../images/empiricalmethods-logo-favicon.png">
 	</head>
 	<body class="is-preload">
@@ -105,11 +106,11 @@
 
 <h3>Standards</h3>
 
-<p>Annotationsstandards erfüllen zwei wesentliche Zwecke: Sie stellen zum einen sicher, dass Ihre Annotationen an andere Personen weitergegeben und sinnvoll weitergenutzt werden können, und sie ermöglichen zum anderen ein konsistentes Vorgehen, das durch Annotationstools unterstützt werden kann, damit Sie nicht manuell (z.B. in einer Textdatei) annotieren müssen, was durchaus anfällig für Fehler sein kann.</p>
+<p>Annotationsstandards erfüllen zwei wesentliche Zwecke: Sie stellen zum einen sicher, dass Ihre Annotationen an andere Personen weitergegeben und sinnvoll <a href="../../ems-intro/chapters/02_reproduzierbarkeit.html">weitergenutzt</a> werden können, und sie ermöglichen zum anderen ein konsistentes Vorgehen, das durch Annotationstools unterstützt werden kann, damit Sie nicht manuell (z.B. in einer Textdatei) annotieren müssen, was durchaus anfällig für Fehler sein kann.</p>
 
 <p>Der Begriff <i>Annotationsstandard</i> kann sich auf unterschiedliche Dinge beziehen: Zum einen spricht man von Annotationsstandards, wenn es um konkrete Annotationsschemata geht, die ein standardisiertes Inventar an Annotationen für einen bestimmten Bereich (z.B. die Annotation von Wortarten) zur Verfügung stellen. Auf diese Annotationsschemata kommen wir gleich zurück. Zum anderen kann sich der Begriff aber auch auf “Best-practice”-Standards für die Datenannotation im Allgemeinen beziehen.</p>
 
-<p>In diesem letztgenannten Sinn verwendet Leech (1997) den Begriff, wenn er fünf Annotationsstandards formuliert, die wir im Folgenden leicht verändert wiedergeben (deutsche Übertragung in Anlehnung an Lemnitzer/Zinsmeister 2015: 98).</p>
+<p>In diesem letztgenannten Sinn verwendet <a href="javascript://" data-toggle="popover" data-content="Leech, Geoffrey. 1997. Introducing corpus annotation. In Roger Garside, Geoffrey Leech & Anthony McEnery (eds.), Corpus Annotation. Linguistic information from computer text corpora, 1–18. Harlow: Addison-Wesley.">Leech (1997)</a> den Begriff, wenn er fünf Annotationsstandards formuliert, die wir im Folgenden leicht verändert wiedergeben (deutsche Übertragung in Anlehnung an <a href="javascript://" data-toggle="popover" data-content="Lemnitzer, Lothar & Heike Zinsmeister. 2015. Korpuslinguistik. Eine Einführung. 3rd ed. Tübingen: Narr.">Lemnitzer/Zinsmeister (2015: 98)</a>.</p>
 
 <ol>
 
@@ -190,6 +191,13 @@
 		<script src="../assets/js/accordion.js"></script>
 		<script src="../assets/js/dragndropquiz.js"></script>
 		<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="../../assets/js/bootstrap.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				$('[data-toggle="popover"]').popover();   
+			});
+		</script>
 
 
 

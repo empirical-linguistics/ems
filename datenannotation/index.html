@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="../assets/css/quizlib.min.css" />
 		<link rel="stylesheet" href="../assets/css/quizlib_stylesheet.css" />
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 		<link rel="icon" href="../images/empiricalmethods-logo-favicon.png">
 	</head>
 	<body class="is-preload">
@@ -36,7 +37,7 @@
 								<li><a href="chapters/02-annotationsebenen.html" id="top-link"><span class="icon solid fa-book">Annotationsebenen</span></a></li>
 								<li><a href="chapters/03-annotationsrichtlinien.html" id="top-link"><span class="icon solid fa-tools">Annotationsrichtlinien</span></a></li>
 								<li><a href="chapters/04-annotationstools.html" id="top-link"><span class="icon solid fa-tools">Annotationstools</span></a></li>
-								<li><a href="chapters/05-uebungen.html" id="top-link"><span class="icon solid fa-tools">Annotationstools</span></a></li>
+								<li><a href="chapters/05-uebungen.html" id="top-link"><span class="icon solid fa-tools">Übungen</span></a></li>
 								<ul style="padding-left: 6%;">
 									
 
@@ -153,7 +154,7 @@
 
 <p>Wenn Sie ein bereits bestehendes öffentliches Korpus benutzen, wird es in der Regel schon über Annotationen verfügen. Gängig ist insbesondere die Annotation der Wortarten und der Lemmata (also der Grundformen von Wörtern, z.B. sein für bin, ist, sind etc.). Das ermöglicht es Ihnen beispielsweise, gezielt nach Wörtern zu suchen, die zu einer bestimmten Wortart gehören (z.B. nach Substantiven). In diesen Fällen können Sie davon profitieren, dass jemand anders die Annotationsarbeit schon für Sie gemacht hat. Um bestehende Annotationen zu verstehen und richtig damit umgehen zu können, ist es jedoch sinnvoll, auch eigene Annotationeerfahrungen zu sammeln. Deshalb werden wir uns in diesem Tutorial auf die eigene Annotation konzentrieren.</p>
 
-<p>Wenn Sie sich für die Hintergründe annotierter Korpora interessieren, sei Ihnen ein Blick in einschlägige Fachliteratur empfohlen, z.B. das Kapitel 4 von Lemnitzer/Zinsmeister (2015).</p>
+<p>Wenn Sie sich für die Hintergründe annotierter Korpora interessieren, sei Ihnen ein Blick in einschlägige Fachliteratur empfohlen, z.B. das Kapitel 4 von <a href="javascript://" data-toggle="popover" data-content="Lemnitzer, Lothar & Heike Zinsmeister. 2015. Korpuslinguistik. Eine Einführung. 3rd ed. Tübingen: Narr.">Lemnitzer/Zinsmeister (2015)</a>.</p>
 
 
 		
@@ -212,6 +213,13 @@
 		<script src="../assets/js/accordion.js"></script>
 		<script src="../assets/js/dragndropquiz.js"></script>
 		<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="../assets/js/bootstrap.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				$('[data-toggle="popover"]').popover();   
+			});
+		</script>
 
 
 
