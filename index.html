@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="icon" href="images/empiricalmethods-logo-favicon.png">
 	</head>
 	<body class="is-preload">
@@ -175,6 +176,23 @@
 								<li>Schriftart <a href="https://fonts.google.com/specimen/Source+Sans+Pro?query=Source+Sans+pro">Source Sans Pro</a> von Paul D. Hunt / Adobe, lizenziert unter der <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">Open Font License</a></li>
 							</ul>
 
+							<h2>Zitiervorschlag</h2>
+							<p>Hartmann, Stefan & Alexander Willich. 2021. Empirische Methoden für die Sprachwissenschaft.
+
+								<a href="https://doi.org/10.5281/zenodo.5812672"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5812672.svg" alt="DOI"></a> <a href="javascript://" data-toggle="popover" data-content="
+								
+@misc{HartmannWillich2021,
+	title = {Empirische {Methoden} für die {Sprachwissenschaft}},
+	url = {https://empirical-linguistics.github.io/ems/},
+	author = {Hartmann, Stefan and Willich, Alexander},
+	year = {2021},
+	note = {doi:10.5281/zenodo.5812672},
+}
+
+								">Bibtex</a>
+								
+								</p>
+
 							
 
 						</div>
@@ -200,6 +218,13 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/bootstrap.min.js"></script>
+
+			<script>
+				$(document).ready(function(){
+					$('[data-toggle="popover"]').popover();   
+				});
+			</script>
 
 	</body>
 </html>
