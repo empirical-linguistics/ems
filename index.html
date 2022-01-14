@@ -189,7 +189,9 @@
 	note = {doi:10.5281/zenodo.5812672},
 }
 
-								">Bibtex</a>
+								">BibTeX</a> 
+
+								<span><button onclick="copyToClipboard('@misc{HartmannWillich2021,<br>title = {Empirische {Methoden} für die {Sprachwissenschaft}},<br>url = {https\:\/\/empirical-linguistics.github.io/ems/},<br>author = {Hartmann, Stefan and Willich, Alexander},<br>year = {2021},<br>note = {doi:10.5281/zenodo.5812672},<br>}')" Style="line-height: 16px;font-size: 10px;"><i class="far fa-clipboard"></i> Copy BibTeX to clipboard</button></span>
 								
 								</p>
 
@@ -220,10 +222,29 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/bootstrap.min.js"></script>
 
+			<!-- Popover script -->
+
 			<script>
 				$(document).ready(function(){
 					$('[data-toggle="popover"]').popover();   
 				});
+			</script>
+
+			<!-- Copy to clipboard script-->
+			<div id="mtoast" onclick="this.style.display='none'"></div>			
+			<script type="text/javascript">
+				function copyToClipboard(copyText) {
+					var toast = document.getElementById("mtoast");
+					console.log(copyText);
+					toast.innerHTML = "BibTex copied to clipoard!";
+					navigator.clipboard.writeText(copyText.replace(/(<br>)/g, '\n').replace(/\t/g, '')).then(
+						() => { toast.style.display = "block"; }).then(
+						() => setTimeout(
+							() => { toast.style.display = "none"; },
+							2000
+						)
+					); 
+				}
 			</script>
 
 	</body>

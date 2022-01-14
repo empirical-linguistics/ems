@@ -1980,6 +1980,7 @@ input::-moz-focus-inner {
 		transition: background-color 0.35s ease-in-out;
 	}
 
+
 		input[type="button"]:hover,
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
@@ -2009,8 +2010,7 @@ input::-moz-focus-inner {
 		  }
 		#submit:hover{
 			background-color: #3a8;
-		}
-		  
+		}  
 
 /* Item */
 
